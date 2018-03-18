@@ -49,6 +49,19 @@ import pandas as pd
 
 dataset = pd.read_csv('Ads_CTR_Optimisation.csv')
 
+'''
+At each round n, we consider 2 numbers for each ad i
+step1:
+     number_of_rewards_1(no. of times the ad i got reward 1 upto round n)
+     number_of_rewards_0(no. of times the ad i got reward 0 upto round n)
+step2:
+    for each ad i we take the random draw from the distribution given below
+    random_beta = beta( number_of_rewards_1[i]+1, number_of_rewards_0[i]+1)
+step3:
+    we select the ad that has highest random_beta
+     
+'''
+
 #implementing the Thompson sampling
 import random
 d=10
